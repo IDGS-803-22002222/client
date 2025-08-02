@@ -6,10 +6,10 @@
     </h1>
 
     <div class="flex flex-col items-center gap-5 justify-center">
-      @if(auth.getUserDetail()){
+      @if(authService.getUserDetail()){
       <h1 class="text-2xl">
         You are logged in as <span class="font-bold bg-blue-600 rounded-md p-2 text-white">
-          {{auth.getUserDetail()?.fullName}}
+          {{authService.getUserDetail()?.fullName}}
         </span>
       </h1>
       }@else{

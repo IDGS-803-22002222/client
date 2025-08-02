@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import {
   FormBuilder,
   FormGroup,
@@ -10,9 +10,10 @@ import { MatInputModule } from '@angular/material/input';
 import { Router, RouterLink } from '@angular/router';
 import { Auth } from '../../services/auth';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
+
 @Component({
   selector: 'app-login',
-standalone: true,
+  standalone: true,
   imports: [
     MatInputModule,
     RouterLink,
@@ -21,10 +22,10 @@ standalone: true,
     ReactiveFormsModule,
   ],
   templateUrl: './login.html',
-  styleUrl: './login.css'
+  styleUrl: './login.css',
 })
-export class Login {
-authService = inject(Auth);
+export class LoginComponent implements OnInit {
+  authService = inject(Auth);
   matSnackBar = inject(MatSnackBar);
   router = inject(Router);
   hide = true;

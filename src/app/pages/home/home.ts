@@ -7,9 +7,8 @@ import { Auth } from '../../services/auth';
   standalone: true,
   imports: [RouterLink],
   templateUrl: './home.html',
-  styleUrl: './home.css'
+  styleUrl: './home.css',
 })
-export class Home {
-  auth = inject(Auth);
-
+export class HomeComponent {
+  authService = inject(Auth);
 }

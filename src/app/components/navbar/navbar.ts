@@ -3,25 +3,29 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { Router, RouterLink } from '@angular/router';
-import { Auth} from '../../services/auth';
+import { Auth } from '../../services/auth';
 import { MatMenuModule } from '@angular/material/menu';
 import { CommonModule } from '@angular/common';
+import { MatDividerModule } from '@angular/material/divider';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [  MatToolbarModule,
+  imports: [
+    MatToolbarModule,
     RouterLink,
     MatMenuModule,
     MatButtonModule,
     MatSnackBarModule,
     MatIconModule,
-    CommonModule,],
+    MatDividerModule,
+    CommonModule,
+  ],
   templateUrl: './navbar.html',
-  styleUrl: './navbar.css'
+  styleUrl: './navbar.css',
 })
 export class Navbar {
-auth = inject(Auth);
+  auth = inject(Auth);
   matSnackBar = inject(MatSnackBar);
   router = inject(Router);
 
